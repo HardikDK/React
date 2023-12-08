@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* src/index.css */
+/*@import 'tailwindcss/base';*/
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+.backgroundImg {
+  z-index: -4;
+  /*height: inherit;*/
+}
+
+.loginTitle {
+  /*margin-left: 30%;*/
+  /*margin-right: 30%;*/
+}
+
+/*md:w-[120px]*/
