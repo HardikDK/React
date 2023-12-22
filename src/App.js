@@ -16,14 +16,15 @@
 // import Search from './components/Search.js';
 // import Timer from './components/Timer.js';
 // import HookCounterOne from './components/HookCounterOne.js';
-import Posts from './components/Posts.js';
-
+// import Posts from './components/Posts.js';
+import Topbar from './components/Topbar.js';
 
 function App() {
   return (
     <div className="App">
-      <Posts/>
+      <Topbar/>
       {/*
+        <Posts/>
         <HookCounterOne/>
         <Timer/>
         <Text/>
