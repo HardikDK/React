@@ -1,47 +1,44 @@
-import bgimage from './img/bgimg.jpeg';
-import Login from './components/Login.js';
+// import bgimage from './img/bgimg.jpeg';
+// import Login from './components/Login.js';
+// import CountDemo from './components/CountDemo.js';
+// import ExampleComponent from './components/ExampleComponent.js';
+// import ThemedComponent from './components/ThemedComponent.js';
+// import Reducer from './components/Reducer.js';
+// import Ref from './components/Ref.js';
+// import Layout from './components/Layout.js';
+
+// import Counter from './components/Counter.js';
+// import Input from './components/Input.js';
+// import Toggle from './components/Toggle.js';
+// import Text from './components/Text.js';
+// import TextField from './components/TextField.js';
+// import Demo from './components/Demo.js';
+// import Search from './components/Search.js';
+// import Timer from './components/Timer.js';
+// import HookCounterOne from './components/HookCounterOne.js';
+import Posts from './components/Posts.js';
+
 
 function App() {
   return (
     <div className="App">
-      <div className="bg-cover bg-center flex justify-center">
-        <img src={bgimage} className="App-logo absolute bg-black backgroundImg h-full w-full" alt="logo" />
-          <header>
-            <div className=" flex justify-left">
-              <a href="#">
-                <h6 className="text-xl text-white">Login Page</h6>
-              </a>
-            </div>
-          {/*
-            <div className=" justify-right">
-              <a href="#">
-                <h6 className="text-xl text-white">Dashboard</h6>
-              </a>
-              <a href="#">
-                <h6 className="text-xl text-white">Register</h6>
-              </a>
-              <a href="#">
-                <h6 className="text-xl text-white">Login</h6>
-              </a>
-            </div>
-          */}
-          </header>
-        <Login/>
-      </div>
-      <div className="flex justify-left">
-        <a href="#">
-          <h6 className="text-xl text-white mr-2">HOME</h6>
-        </a>
-        <a href="#">
-          <h6 className="text-xl text-white mr-2">COMPANY</h6>
-        </a>
-        <a href="#">
-          <h6 className="text-xl text-white mr-2">PORTFOLIO</h6>
-        </a>
-        <a href="#">
-          <h6 className="text-xl text-white mr-2">BLOG</h6>
-        </a>
-      </div>
+      <Posts/>
+      {/*
+        <HookCounterOne/>
+        <Timer/>
+        <Text/>
+        <Search/>
+        <Demo/>
+        <TextField/>
+        <Toggle/>
+        <Input/>
+        <Counter/>
+        <CountDemo/>
+        <ExampleComponent/>
+        <ThemedComponent/>
+        <Reducer/>
+        <Ref/>
+      */}
     </div>
   );
 }
