@@ -3,6 +3,7 @@ import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
 import Counties from "./Counties";
+import Form from "./Form";
 
 // const routes = [
 //   // {
@@ -37,7 +38,13 @@ const Routers = [
     component:Counties,
     // exact: true,
     name: "Counties"
-  }
+  },
+  {
+    path:'/auth',
+    component:Form,
+    // exact: true,
+    name: "Auth"
+  },
 ];
 
 function Topbar() {
