@@ -62,7 +62,8 @@ const Form = () => {
 	        }),
 	});
 	const onChange = (event, key) => setData({...data, key: event.target.value});
-	const onSubmit : FormEventHandler<HTMLFormElement> = (event) => {
+	// : FormEventHandler<HTMLFormElement>
+	const onSubmit = (event) => {
 		event.preventDefault();
 		try{
 			schema.parse(data);

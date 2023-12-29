@@ -1,9 +1,14 @@
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
-import Contact from "./Contact";
+// import Contact from "./Contact";
 import Counties from "./Counties";
 import Form from "./Form";
+import ListTable from "./crud/ListTable";
+// import EditUser from "./crud/EditUser";
+import AddUser from "./crud/AddUser";
+import Posts from "./crud/Posts";
+import Create from "./crud/Create";
 
 // const routes = [
 //   // {
@@ -45,19 +50,52 @@ const Routers = [
     // exact: true,
     name: "Auth"
   },
+  {
+    path:'/users/list',
+    component:ListTable,
+    // exact: true,
+    name: "UsersList"
+  },
+  {
+    path:'/user/edit/:id',
+    component:AddUser,
+    // exact: true,
+    name: "EditUser"
+  },
+  {
+    path:'/user/add',
+    component:AddUser,
+    // exact: true,
+    name: "AddUser"
+  },
+  {
+    path:'/posts',
+    component:Posts,
+    // exact: true,
+    name: "Posts"
+  },
+  {
+    path:'/create',
+    component:Create,
+    // exact: true,
+    name: "Create"
+  },
 ];
 
 function Topbar() {
   return (
-    <div className="Topbar">
+    <div>
+    <div className="flex">
       {
         Routers.map(
           (item, key) =>
             <p key={key}>
-              <Link to={item.path}>{item.name}</Link>
+              <Link to={item.path} className="p-2">{item.name}</Link>
             </p>
         )
       }
+    </div>
+    <div>
       {Routers.map(
         (route, key)=>
           <Routes key={key}>
@@ -65,6 +103,7 @@ function Topbar() {
           </Routes>
         )
       }
+    </div>
       {/*
       <Link to="home"> Home </Link>
       <Link to="about"> About </Link>
