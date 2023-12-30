@@ -3,6 +3,11 @@ import React, { useEffect, useState } from "react";
 import { MdModeEdit, MdOutlineDelete } from "react-icons/md";
 import Select from "react-select";
 import { z } from "zod";
+import {
+   useReactTable,
+   getCoreRowModel,
+   flexRender
+} from '@tanstack/react-table';
 
 const ListTable = () => {
   const [data, setData] = useState([]);
@@ -100,33 +105,54 @@ const ListTable = () => {
     { value: "ME", label: "Mexico" },
     { value: "IN", label: "India" },
   ];
+  const columns = [
+    {
+      accessorKey: 'id',
+      header: () => <span>No</span>
+    },
+    {
+      accessorKey: 'name',
+      header: 'Name'
+    },
+    {
+      accessorKey: 'comment',
+      header: () => <span>Comment</span>
+    },
+    {
+      accessorKey: 'country.label',
+      header: 'Country'
+    },
+  ]
+  const table = useReactTable({
+    data,
+    columns,
+    getCoreRowModel: getCoreRowModel(),
+  })
   return (
     <div className="block justify-center items-center">
       <table className="w-full table-auto border-separate border">
         <thead>
-          <tr>
-            <td className="border">No.</td>
-            <td className="border">Name</td>
-            <td className="border">Country</td>
-            <td className="border">Action</td>
-          </tr>
+          {table.getHeaderGroups().map(headerGroup => (
+            <tr key={headerGroup.id}>
+              {headerGroup.headers.map(header => (
+                <th key={header.id}>
+                  {flexRender(
+                    header.column.columnDef.header,
+                    header.getContext()
+                  )}
+                </th>
+              ))}
+            </tr>
+          ))}
         </thead>
         <tbody>
-          {data.map((user) => (
-            <tr key={user.id}>
-              <td className="border">{user.id}</td>
-              <td className="border">{user.name}</td>
-              <td className="border">{user.country.label}</td>
-              <td className="flex pt-2 pb-2 border">
-                <MdModeEdit
-                  className="cursor-pointer mr-2"
-                  onClick={() => getEditUserData(user.id)}
-                />
-                <MdOutlineDelete
-                  onClick={() => deleteUser(user.id)}
-                  className="cursor-pointer"
-                />
-              </td>
+          {table.getRowModel().rows.map(row => (
+            <tr key={row.id} id={row.id} className="even:bg-blue-500">
+              {row.getVisibleCells().map(cell => (
+                <td key={cell.id}>
+                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                </td>
+              ))}
             </tr>
           ))}
         </tbody>
