@@ -26,15 +26,6 @@
         "label": "India"
       },
       "comment": "I am Rozer"
-    },
-    {
-      "country": {
-        "value": "CA",
-        "label": "Canada"
-      },
-      "comment": "",
-      "name": "New",
-      "id": 4
     }
   ]
 }
