@@ -9,7 +9,7 @@ import ListTable from "./crud/ListTable";
 import AddUser from "./crud/AddUser";
 import Posts from "./crud/Posts";
 import Create from "./crud/Create";
-
+import Query from "./Tanstack/Query.js";
 // const routes = [
 //   // {
 //   //   path:'',
@@ -79,6 +79,12 @@ const Routers = [
     component:Create,
     // exact: true,
     name: "Create"
+  },
+  {
+    path:'/query',
+    component:Query,
+    // exact: true,
+    name: "Query"
   },
 ];
 
